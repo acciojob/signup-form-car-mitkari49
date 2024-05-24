@@ -1,58 +1,124 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-	<div class="container">
-		<form method="post">
-			<div class="form-group">
-				<label for="name">Name:</label>
-				<input type="text" id="name" required placeholder="Name">
-			</div>
-			<div class="form-group">
-				<label for="email">Email:</label>
-				<input id="email" type="email" required placeholder="Email">
-			</div>
-			<div class="form-group">
-				<label for="gender">Gender</label>
-				<input type="radio" id="gender_m" required name="gender">
-				<input type="radio" id="gender_f" required name="gender">
-			</div>
-			<div class="form-group">
-				<label for="cars">Car Brands:</label>
-				<input type="select" id="cars" placeholder="--Please choose an option--" required >
-			</div>
-			<div class="form-group">
-				<label for="age">Age:</label>
-				<input type="number" required id="age" placeholder="Age">
-			</div>
-			<div class="form-group">
-				<label for="dob">DOB</label>
-				<input type="date" requiredid="dob">
-			</div>
-			<div class="form-group">
-				<label for="tel">Phone Number:</label>
-				<input type="tel" id="tel" placeholder="xxx-xxx-xxxx">
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" required id="password" placeholder="Password">
-			</div>
-			<div class="form-group">
-				<label for="tos">I agree to the TOS</label>
-				<input type="checkbox" required id="tos">
-			</div>
-			<button type="submit">Submit</button>
-		</form>
-	</div>
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <div class="container">
+        <h1>Signup Form</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" minlength="3" maxlength="50" required placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="gender_m" name="gender" value="male" required>
+                        <label for="gender_m">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender_f" name="gender" value="female" required>
+                        <label for="gender_f">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cars">Car Brands:</label>
+                <select id="cars" name="cars" required>
+                    <option value="" disabled selected>--Please choose an option--</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="mercedes">Mercedes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required placeholder="Age">
+            </div>
+            <div class="form-group">
+                <label for="dob">DOB:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="tel">Phone Number:</label>
+                <input type="tel" id="tel" name="tel" placeholder="xxx-xxx-xxxx">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="tos">I agree to the TOS</label>
+                <input type="checkbox" id="tos" name="tos" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 
 </html>
